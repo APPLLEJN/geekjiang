@@ -7,7 +7,7 @@ var path = require('path');
 module.exports = {
     entry: [
          // WebpackDevServer host and port //form the server index.js
-        'webpack/hot/dev-server',
+         'webpack-hot-middleware/client?path=/__webpack_hmr&timeout=20000',
         './app/js/client/index.js' // Your appʼs entry point
     ],
     output: {
