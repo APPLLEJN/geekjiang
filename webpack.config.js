@@ -2,16 +2,17 @@
  * Created by jiangnan on 15/11/15.
  */
 var webpack = require('webpack');
+var path = require('path');
 
 module.exports = {
     entry: [
-        'webpack-dev-server/client?http://127.0.0.1:3000', // WebpackDevServer host and port
+         // WebpackDevServer host and port //form the server index.js
         'webpack/hot/dev-server',
-        './app/entry.js' // Your appʼs entry point
+        './app/js/client/index.js' // Your appʼs entry point
     ],
     output: {
-        path: __dirname + '/app',
-        publicPath: "/app",
+        path: path.resolve(__dirname, "build"),
+        publicPath: "http://localhost:8080/",
         filename: 'bundle.js'
     },
     plugins: [
@@ -24,11 +25,11 @@ module.exports = {
         loaders: [{
             test: /\.js$/,
             exclude: /node_modules/,
-            loader: 'react-hot!jsx-loader?harmony'
+            loader: 'babel!react-hot!jsx-loader?harmony'
         },{
             test: /\.js[x]?$/,
             exclude: /node_modules/,
-            loader: 'babel-loader',
+            loader: 'babel!babel-loader',
         }]
     }
 };
