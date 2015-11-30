@@ -18,6 +18,12 @@ module.exports = {
     plugins: [
         new webpack.HotModuleReplacementPlugin()
     ],
+    resolve: {
+        modulesDirectories: [
+            'app',
+        ],
+        extensions: ['.js']
+    },
     eslint: {
         configFile: '.eslintrc'
     },
