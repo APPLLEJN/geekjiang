@@ -1,41 +1,47 @@
-/**
- * Created by jiangnan on 15/11/15.
- */
-var webpack = require('webpack');
-var path = require('path');
+var path = require('path')
+var webpack = require('webpack')
 
 module.exports = {
-    entry: [
-         // WebpackDevServer host and port //form the server index.js
-         'webpack-hot-middleware/client?path=/__webpack_hmr&timeout=20000',
-        './app/js/client/index.js' // Your appʼs entry point
-    ],
-    output: {
-        path: path.resolve(__dirname, "build"),
-        publicPath: "http://localhost:8080/",
-        filename: 'bundle.js'
-    },
-    plugins: [
-        new webpack.HotModuleReplacementPlugin()
-    ],
-    resolve: {
-        modulesDirectories: [
-            'app',
-        ],
-        extensions: ['.js']
-    },
-    eslint: {
-        configFile: '.eslintrc'
-    },
-    module: {
-        loaders: [{
-            test: /\.js$/,
-            exclude: /node_modules/,
-            loader: 'babel!react-hot!jsx-loader?harmony'
-        },{
-            test: /\.js[x]?$/,
-            exclude: /node_modules/,
-            loader: 'babel!babel-loader',
-        }]
-    }
-};
+  devtool: 'cheap-module-eval-source-map',
+  entry: [
+    'webpack-hot-middleware/client',
+    './index'
+  ],
+  output: {
+    path: path.join(__dirname, 'dist'),
+    filename: 'bundle.js',
+    publicPath: '/static/'
+  },
+  plugins: [
+    new webpack.optimize.OccurenceOrderPlugin(),
+    new webpack.HotModuleReplacementPlugin(),
+    new webpack.NoErrorsPlugin()
+  ],
+  module: {
+    loaders: [
+      {
+        test: /\.js$/,
+        loaders: [ 'babel' ],
+        exclude: /node_modules/,
+        include: __dirname
+      }
+    ]
+  }
+}
+
+
+// When inside Redux repo, prefer src to compiled version.
+// You can safely delete these lines in your project.
+var reduxSrc = path.join(__dirname, '..', '..', 'src')
+var reduxNodeModules = path.join(__dirname, '..', '..', 'node_modules')
+var fs = require('fs')
+if (fs.existsSync(reduxSrc) && fs.existsSync(reduxNodeModules)) {
+  // Resolve Redux to source
+  module.exports.resolve = { alias: { 'redux': reduxSrc } }
+  // Compile Redux from source
+  module.exports.module.loaders.push({
+    test: /\.js$/,
+    loaders: [ 'babel' ],
+    include: reduxSrc
+  })
+}
