@@ -12,6 +12,7 @@ import { Provider } from 'react-redux';
 import App from './containers/App'
 import configureStore from './store/configureStore'
 import { renderToString } from 'react-dom/server'
+var db = require('monk')('localhost/geekjiang')
 
 var compiler = webpack(config)
 app.use(webpackDevMiddleware(compiler, { noInfo: true, publicPath: config.output.publicPath }))
