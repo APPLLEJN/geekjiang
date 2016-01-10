@@ -1,25 +1,33 @@
 var webpack = require('webpack')
 var webpackDevMiddleware = require('webpack-dev-middleware')
 var webpackHotMiddleware = require('webpack-hot-middleware')
-var config = require('./webpack.config')
+var config = require('../../../webpack.config')
+var open = require("open")
 var app = new (require('express'))()
 var port = 3000
 import path from 'path';
 import Express from 'express';
 import React from 'react';
 import { createStore } from 'redux';
+import {ReduxRouter} from '../../src'; // 'redux-router'
 import { Provider } from 'react-redux';
-import App from './containers/App'
-import configureStore from './store/configureStore'
+import App from '../client/containers/App'
+import configureStore from '../client/store/configureStore'
 import { renderToString } from 'react-dom/server'
-var db = require('monk')('localhost/geekjiang')
 
 var compiler = webpack(config)
 app.use(webpackDevMiddleware(compiler, { noInfo: true, publicPath: config.output.publicPath }))
 app.use(webpackHotMiddleware(compiler))
 
+var db = require('monk')('localhost:27017/geekjiang')
+var images = db.get('images');
+images.find({}, function(err, docs) {
+   console.log(docs)
+})
+
 // 每当收到请求时都会触发
 app.use(handleRender);
+app.get(handleRender);
 
 function handleRender(req, res) {
 	const store = configureStore()
@@ -31,7 +39,7 @@ function handleRender(req, res) {
 	    </Provider>
 	  )
 
-	 // 从 store 中获得初始 state
+	 // 从 store 中获得初始state
 	  const initialState = store.getState();
 
 	  // 把渲染后的页面内容发送给客户端
@@ -56,11 +64,37 @@ function renderFullPage(html, initialState) {
     `
 }
 
+const getMarkup = (store) => {
+  const initialState = serialize(store.getState());
+
+  const markup = renderToString(
+    <Provider store={store} key="provider">
+      <ReduxRouter/>
+    </Provider>
+  );
+
+  return `<!doctype html>
+    <html>
+      <head>
+        <title>Redux React Router – Server rendering Example</title>
+      </head>
+      <body>
+        <div id="${MOUNT_ID}">${markup}</div>
+        <script>window.__initialState = ${initialState};</script>
+        <script src="/static/bundle.js"></script>
+      </body>
+    </html>
+  `;
+};
+
 app.listen(port, function(error) {
   if (error) {
     console.error(error)
   } else {
+    open("http://localhost:"+port);
     console.info("==> 🌎  Listening on port %s. Open up http://localhost:%s/ in your browser.", port, port)
   }
 })
+
+
 
