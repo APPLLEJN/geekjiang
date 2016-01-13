@@ -1,7 +1,7 @@
 var path = require('path')
 var webpack = require('webpack')
 
-module.exports = {
+const config = {
   devtool: 'cheap-module-eval-source-map',
   entry: [
     'webpack-hot-middleware/client',
@@ -45,3 +45,5 @@ if (fs.existsSync(reduxSrc) && fs.existsSync(reduxNodeModules)) {
     include: reduxSrc
   })
 }
+
+export default config;

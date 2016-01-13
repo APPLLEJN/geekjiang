@@ -1,9 +1,13 @@
 import React, { Component, PropTypes } from 'react'
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
 
 class Counter extends Component {
   render() {
+
     const { increment, incrementIfOdd, incrementAsync, decrement, counter } = this.props
+    const cssTest = (<div>1111111111</div>)
     return (
+      <div>
       <p>
         Clicked: {counter} times
         {' '}
@@ -15,6 +19,10 @@ class Counter extends Component {
         {' '}
         <button onClick={() => incrementAsync()}>Increment async</button>
       </p>
+      <ReactCSSTransitionGroup transitionName="example" transitionEnterTimeout={500} transitionLeaveTimeout={300}>
+        {cssTest}
+      </ReactCSSTransitionGroup>
+      </div>
     )
   }
 }
