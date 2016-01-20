@@ -36,8 +36,7 @@ const getMarkup = (store) => {
       <ReduxRouter/>
     </Provider>
   );
-	 // 从 store 中获得初始state
-	const initialState = store.getState();
+	
   return `<!doctype html>
     <html>
       <head>
