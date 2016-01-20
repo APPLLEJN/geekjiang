@@ -1,24 +1,23 @@
+import React from 'react'
 import express from 'express'
 import webpack from 'webpack'
-import React from 'react'
 import webpackDevMiddleware from 'webpack-dev-middleware'
 import webpackHotMiddleware from 'webpack-hot-middleware'
-import config from './webpack.config'
 import path from 'path'
-import Express from 'express'
-import React from 'react'
 import { createStore } from 'redux'
 import { Provider } from 'react-redux'
-import App from './containers/App'
-import configureStore from './store/configureStore'
 import { renderToString } from 'react-dom/server'
 import qs from 'query-string';
 import serialize from 'serialize-javascript';
 import { createMemoryHistory } from 'history';
 import open from 'open'
 
-import reducer from '../client/reducer';
-import routes from './routes';
+import App from './containers/App'
+import configureStore from './store/configureStore'
+import config from './webpack.config'
+import reducer from '../client/reducers';
+import routes from '../../routes';
+import {reduxReactRouter, match} from '../../src/server'; // 'redux-router/server';
 
 var app = express()
 var port = 3000
@@ -61,7 +60,10 @@ app.use(webpackDevMiddleware(compiler, {
 app.use(webpackHotMiddleware(compiler));
 
 app.use((req, res) => {
+  // TO DO 
+  // console.log(createStore, createMemoryHistory)
   const store = reduxReactRouter({ routes, createHistory: createMemoryHistory })(createStore)(reducer);
+  console.log(store, '============')
   const query = qs.stringify(req.query);
   const url = req.path + (query.length ? '?' + query : '');
 

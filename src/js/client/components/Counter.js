@@ -2,7 +2,7 @@ import React, { Component, PropTypes } from 'react'
 import ImgSlider from './imgSlider'
 import Header from './Header'
 import HeaderBefore from './HeaderBefore'
-console.log(HeaderBefore)
+
 export default class Counter extends Component {
   static propTypes = {
     increment: PropTypes.func.isRequired,
@@ -39,7 +39,6 @@ export default class Counter extends Component {
         <div><img src='http://img1.imgtn.bdimg.com/it/u=3132488167,1530212266&fm=21&gp=0.jpg'/></div>
         <div><img src='http://img1.imgtn.bdimg.com/it/u=3132488167,1530212266&fm=21&gp=0.jpg'/></div>
       </ImgSlider>
-      <HeaderBefore title="群主页"/>
       <Header title="群主页"/>
       </div>
       </div>
