@@ -12,11 +12,11 @@ import serialize from 'serialize-javascript';
 import { createMemoryHistory } from 'history';
 import open from 'open'
 
-import App from './containers/App'
-import configureStore from './store/configureStore'
-import config from './webpack.config'
+import App from '../client/containers/App'
+import configureStore from '../client/store/configureStore'
+import config from '../../../webpack.config'
 import reducer from '../client/reducers';
-import routes from '../../routes';
+import routes from '../routes';
 import {reduxReactRouter, match} from '../../src/server'; // 'redux-router/server';
 
 var app = express()

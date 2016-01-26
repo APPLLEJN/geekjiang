@@ -1,7 +1,6 @@
 import React, { Component, PropTypes } from 'react'
 import ImgSlider from './imgSlider'
 import Header from './Header'
-import HeaderBefore from './HeaderBefore'
 
 export default class Counter extends Component {
   static propTypes = {
