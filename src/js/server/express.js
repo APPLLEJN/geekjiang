@@ -17,7 +17,8 @@ import configureStore from '../client/store/configureStore'
 import config from '../../../webpack.config'
 import reducer from '../client/reducers';
 import routes from '../routes';
-import {reduxReactRouter, match} from '../../src/server'; // 'redux-router/server';
+import {ReduxRouter} from 'redux-router';
+import {reduxReactRouter, match} from 'redux-router/server'; // 'redux-router/server';
 
 var app = express()
 var port = 3000
