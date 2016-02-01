@@ -47,6 +47,7 @@ const getMarkup = (store) => {
         <div id="root">${markup}</div>
         <script>window.__initialState = ${initialState};</script>
         <script src="/static/bundle.js"></script>
+        <link rel="stylesheet" type="text/css" href="../../css/common.css" />
       </body>
     </html>
   `;
@@ -63,7 +64,6 @@ app.use((req, res) => {
   // TO DO 
   // console.log(createStore, createMemoryHistory)
   const store = reduxReactRouter({ routes, createHistory: createMemoryHistory })(createStore)(reducer);
-  console.log(store, '============')
   const query = qs.stringify(req.query);
   const url = req.path + (query.length ? '?' + query : '');
 
