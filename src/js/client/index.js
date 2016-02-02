@@ -1,23 +1,21 @@
 import React from 'react'
-import { render } from 'react-dom'
+import ReactDOM from 'react-dom'
+import { createStore, compose } from 'redux'
 
 import {
   ReduxRouter,
   reduxReactRouter,
-} from 'redux-router';
+} from 'redux-router'
 
-import { Provider } from 'react-redux';
-import { devTools } from 'redux-devtools';
-import createHistory from 'history/lib/createBrowserHistory';
+import { Provider } from 'react-redux'
+import createHistory from 'history/lib/createBrowserHistory'
 
 import routes from '../routes'
+import reducer from './reducers';
 import App from './containers/App'
-import DevTools from './containers/DevTools';
+import DevTools from './containers/DevTools'
 
-const store = compose(
-  reduxReactRouter({ createHistory }),
-  devTools()
-)(createStore)(reducer, window.__initialState);
+const store = compose(reduxReactRouter({ createHistory }))(createStore)(reducer, window.__initialState);
 
 const rootComponent = (
   <Provider store={store}>
