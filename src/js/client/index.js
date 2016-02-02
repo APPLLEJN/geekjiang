@@ -1,14 +1,38 @@
 import React from 'react'
 import { render } from 'react-dom'
-import { Provider } from 'react-redux'
+
+import {
+  ReduxRouter,
+  reduxReactRouter,
+} from 'redux-router';
+
+import { Provider } from 'react-redux';
+import { devTools } from 'redux-devtools';
+import createHistory from 'history/lib/createBrowserHistory';
+
+import routes from '../routes'
 import App from './containers/App'
-import configureStore from './store/configureStore'
+import DevTools from './containers/DevTools';
 
-const store = configureStore()
+const store = compose(
+  reduxReactRouter({ createHistory }),
+  devTools()
+)(createStore)(reducer, window.__initialState);
 
-render(
+const rootComponent = (
   <Provider store={store}>
-    <App />
-  </Provider>,
-  document.getElementById('root')
-)
+    <ReduxRouter routes={routes} />
+  </Provider>
+);
+
+const mountNode = document.getElementById('root');
+
+// First render to match markup from server
+ReactDOM.render(rootComponent, mountNode);
+// Optional second render with dev-tools
+ReactDOM.render((
+  <div>
+    {rootComponent}
+    <DevTools />
+  </div>
+), mountNode);
