@@ -2,11 +2,10 @@
   "name": "redux-counter-example",
   "version": "0.0.0",
   "description": "Redux counter example",
-  "babel": {
-    "stage": 1
-  },
   "scripts": {
-    "start": "node ./src/js/server/server.js",
+    "webpack": "webpack-dev-server",
+    "server": "node ./src/js/server/server.js",
+    "start": "npm run webpack & npm run server",
     "test": "NODE_ENV=test mocha --recursive --compilers js:babel-core/register --require ./src/js/client/test/setup.js",
     "test:watch": "npm test -- --watch"
   },
@@ -20,6 +19,18 @@
   },
   "homepage": "http://rackt.github.io/redux",
   "dependencies": {
+    "babel-core": "^6.5.1",
+    "babel-loader": "^6.2.2",
+    "babel-plugin-transform-decorators-legacy": "^1.3.4",
+    "babel-plugin-transform-es2015-destructuring": "^6.4.0",
+    "babel-plugin-transform-es2015-function-name": "^6.4.0",
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.4.0",
+    "babel-plugin-transform-es2015-parameters": "^6.4.2",
+    "babel-plugin-transform-es2015-spread": "^6.4.0",
+    "babel-plugin-transform-es2015-sticky-regex": "^6.3.13",
+    "babel-plugin-transform-es2015-unicode-regex": "^6.4.3",
+    "babel-preset-stage-0": "^6.3.13",
+    "babel-register": "^6.4.3",
     "css-loader": "^0.23.1",
     "extract-text-webpack-plugin": "^1.0.1",
     "mongodb": "1.4.4",
@@ -34,6 +45,7 @@
     "react-addons-css-transition-group": "^0.14.3",
     "react-dom": "^0.14.0",
     "react-redux": "^4.0.0",
+    "react-router": "^1.0.3",
     "react-stateless": "^0.2.0",
     "redux": "^3.0.0",
     "redux-devtools": "^3.0.2",
@@ -42,11 +54,10 @@
     "redux-router": "^1.0.0-beta7",
     "redux-thunk": "^0.1.0",
     "serialize-javascript": "^1.1.2",
-    "style-loader": "^0.13.0"
+    "style-loader": "^0.13.0",
+    "webpack-dev-server": "^1.14.1"
   },
   "devDependencies": {
-    "babel-core": "^5.6.18",
-    "babel-loader": "^5.1.4",
     "babel-plugin-react-transform": "^1.1.0",
     "expect": "^1.6.0",
     "express": "^4.13.3",

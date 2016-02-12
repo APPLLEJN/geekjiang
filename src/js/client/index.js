@@ -14,7 +14,7 @@ import routes from '../routes'
 import reducer from './reducers';
 import App from './containers/App'
 import DevTools from './containers/DevTools'
-
+//require("../css/stylesheet.css");
 const store = compose(reduxReactRouter({ createHistory }))(createStore)(reducer, window.__initialState);
 
 const rootComponent = (

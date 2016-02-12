@@ -21,9 +21,9 @@ const style = {
 
 @Radium
 export default class ImgSlider extends React.Component {
-  static propTypes : {
+  static propTypes = {
     slidesToShow: PropTypes.number.slidesToShow,
-  }
+  };
 
    constructor(props) {
     super(props);

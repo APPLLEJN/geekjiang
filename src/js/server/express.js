@@ -22,7 +22,7 @@ import {reduxReactRouter, match} from 'redux-router/server'; // 'redux-router/se
 
 var app = express()
 var port = 3000
-var compiler = webpack(config)
+//var compiler = webpack(config)
 
 // var db = require('monk')('localhost:27017/geekjiang')
 // var images = db.get('images');
@@ -46,19 +46,19 @@ const getMarkup = (store) => {
       <body>
         <div id="root">${markup}</div>
         <script>window.__initialState = ${initialState};</script>
-        <script src="/static/bundle.js"></script>
+        <script src="http://localhost:8080/static/bundle.js"></script>
         <link rel="stylesheet" type="text/css" href="../../css/common.css" />
       </body>
     </html>
   `;
 };
 
-app.use(webpackDevMiddleware(compiler, {
-  noInfo: true,
-  publicPath: config.output.publicPath
-}));
+// app.use(webpackDevMiddleware(compiler, {
+//   noInfo: true,
+//   publicPath: config.output.publicPath
+// }));
 
-app.use(webpackHotMiddleware(compiler));
+// app.use(webpackHotMiddleware(compiler));
 
 app.use((req, res) => {
   // TO DO 
