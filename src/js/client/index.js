@@ -2,24 +2,28 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import { createStore, compose } from 'redux'
 
-import {
-  ReduxRouter,
-  reduxReactRouter,
-} from 'redux-router'
+import { ReduxRouter, reduxReactRouter } from 'redux-router'
 
 import { Provider } from 'react-redux'
 import createHistory from 'history/lib/createBrowserHistory'
 
 import routes from '../routes'
 import reducer from './reducers';
+import configureStore from './store/configureStore';
+
 import App from './containers/App'
 import DevTools from './containers/DevTools'
-//require("../css/stylesheet.css");
-const store = compose(reduxReactRouter({ createHistory }))(createStore)(reducer, window.__initialState);
+
+import style from '../../css/common.css'
+
+const store = configureStore(window.__initialState || {});
 
 const rootComponent = (
   <Provider store={store}>
-    <ReduxRouter routes={routes} />
+  	<div>
+	    <ReduxRouter routes={routes} />
+	    <DevTools/>
+    </div>
   </Provider>
 );
 
@@ -31,6 +35,5 @@ ReactDOM.render(rootComponent, mountNode);
 ReactDOM.render((
   <div>
     {rootComponent}
-    <DevTools />
   </div>
 ), mountNode);

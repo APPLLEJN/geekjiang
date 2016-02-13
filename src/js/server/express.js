@@ -13,7 +13,6 @@ import { createMemoryHistory } from 'history';
 import open from 'open'
 
 import App from '../client/containers/App'
-import configureStore from '../client/store/configureStore'
 import config from '../../../webpack.config'
 import reducer from '../client/reducers';
 import routes from '../routes';
@@ -22,6 +21,7 @@ import {reduxReactRouter, match} from 'redux-router/server'; // 'redux-router/se
 
 var app = express()
 var port = 3000
+var webpackPort = 8080
 //var compiler = webpack(config)
 
 // var db = require('monk')('localhost:27017/geekjiang')
@@ -42,12 +42,12 @@ const getMarkup = (store) => {
     <html>
       <head>
         <title>Redux React Router – Server rendering Example</title>
+        <link rel="stylesheet" type="text/css" href="http://localhost:8080/static/style.css" />
       </head>
       <body>
         <div id="root">${markup}</div>
         <script>window.__initialState = ${initialState};</script>
         <script src="http://localhost:8080/static/bundle.js"></script>
-        <link rel="stylesheet" type="text/css" href="../../css/common.css" />
       </body>
     </html>
   `;

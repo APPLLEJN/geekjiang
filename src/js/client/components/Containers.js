@@ -12,7 +12,7 @@ export default class Containers extends Component {
     return (
       <div>
         <img src = ""/>
-        <h3>1121212124ddd4点点dddd滴滴4555466612</h3>
+        <h3>hello world</h3>
       </div>
       
     )
