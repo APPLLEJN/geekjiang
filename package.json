@@ -1,7 +1,7 @@
 {
-  "name": "redux-counter-example",
-  "version": "0.0.0",
-  "description": "Redux counter example",
+  "name": "geekjiang",
+  "version": "1.0.0",
+  "description": "geekjiang",
   "scripts": {
     "webpack": "webpack-dev-server",
     "server": "node ./src/js/server/server.js",
@@ -36,10 +36,8 @@
     "babel-register": "^6.4.3",
     "css-loader": "^0.23.1",
     "extract-text-webpack-plugin": "^1.0.1",
-    "history": "1.17.0",
-    "open": "0.0.5",
     "query-string": "^3.0.0",
-    "radium": "^0.15.3",
+    "radium": "^0.16.6",
     "react": "^0.14.0",
     "react-addons-clone-with-props": "^0.14.6",
     "react-addons-css-transition-group": "^0.14.3",
@@ -69,6 +67,12 @@
     "webpack-dev-server": "^1.14.1",
     "webpack-dev-middleware": "^1.2.0",
     "webpack-hot-middleware": "^2.2.0",
-    "postcss-loader": "^0.4.3"
+    "postcss-loader": "^0.4.3",
+    "redux-devtools": "^3.0.1",
+    "redux-devtools-dock-monitor": "^1.0.1",
+    "redux-devtools-log-monitor": "^1.0.2",
+    "postcss-loader": "^0.4.3",
+    "history": "1.17.0",
+    "open": "0.0.5"
   }
 }
