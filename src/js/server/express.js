@@ -12,7 +12,6 @@ import serialize from 'serialize-javascript';
 import { createMemoryHistory } from 'history';
 import open from 'open'
 
-import App from '../client/containers/App'
 import config from '../../../webpack.config'
 import reducer from '../client/reducers';
 import routes from '../routes';

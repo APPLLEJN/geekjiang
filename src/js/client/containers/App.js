@@ -1,17 +1,77 @@
-import { bindActionCreators } from 'redux'
+import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
-import Counter from '../components/Counter'
-import Containers from '../components/Containers'
-import * as CounterActions from '../actions/counter'
+import Explore from '../components/Explore'
+import { resetErrorMessage } from '../actions'
+import {
+  ReduxRouter,
+  routerStateReducer,
+  reduxReactRouter,
+  pushState,
+} from 'redux-router';
 
-function mapStateToProps(state) {
-  return {
-    counter: state.counter
+@connect((state, mapStateToProps) => ({resetErrorMessage}))
+export default
+class App extends Component {
+  constructor(props) {
+    super(props)
+    this.handleChange = this.handleChange.bind(this)
+    this.handleDismissClick = this.handleDismissClick.bind(this)
+  }
+
+  handleDismissClick(e) {
+    this.props.resetErrorMessage()
+    e.preventDefault()
+  }
+
+  handleChange(nextValue) {
+    const { dispatch } = this.props;
+    dispatch(pushState(null, `/${nextValue}`));
+  }
+
+  renderErrorMessage() {
+    const { errorMessage } = this.props
+    if (!errorMessage) {
+      return null
+    }
+
+    return (
+      <p style={{ backgroundColor: '#e99', padding: 10 }}>
+        <b>{errorMessage}</b>
+        {' '}
+        (<a href="#"
+            onClick={this.handleDismissClick}>
+          Dismiss
+        </a>)
+      </p>
+    )
+  }
+
+  render() {
+    const { children, inputValue } = this.props
+    return (
+      <div>
+        <Explore value={inputValue}
+                 onChange={this.handleChange} />
+        <hr />
+        {this.renderErrorMessage()}
+        {children}
+      </div>
+    )
   }
 }
 
-function mapDispatchToProps(dispatch) {
-  return bindActionCreators(CounterActions, dispatch)
+App.propTypes = {
+  // Injected by React Redux
+  errorMessage: PropTypes.string,
+  resetErrorMessage: PropTypes.func.isRequired,
+  push: PropTypes.func.isRequired,
+  inputValue: PropTypes.string.isRequired,
+  // Injected by React Router
+  children: PropTypes.node
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Counter)
+function mapStateToProps(state) {
+  return {
+    errorMessage: state.errorMessage
+  }
+}
