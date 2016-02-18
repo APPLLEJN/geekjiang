@@ -9,9 +9,17 @@ import {
   pushState,
 } from 'redux-router';
 
-@connect((state, mapStateToProps) => ({resetErrorMessage}))
+@connect(state => {return {errorMessage: state.errorMessage,resetErrorMessage,inputValue: '' }})
 export default
 class App extends Component {
+  static propTypes = {
+     // Injected by React Redux
+      errorMessage: PropTypes.string,
+      resetErrorMessage: PropTypes.func.isRequired,
+      inputValue: PropTypes.string.isRequired,
+      // Injected by React Router
+      children: PropTypes.node
+  }
   constructor(props) {
     super(props)
     this.handleChange = this.handleChange.bind(this)
@@ -60,18 +68,3 @@ class App extends Component {
   }
 }
 
-App.propTypes = {
-  // Injected by React Redux
-  errorMessage: PropTypes.string,
-  resetErrorMessage: PropTypes.func.isRequired,
-  push: PropTypes.func.isRequired,
-  inputValue: PropTypes.string.isRequired,
-  // Injected by React Router
-  children: PropTypes.node
-}
-
-function mapStateToProps(state) {
-  return {
-    errorMessage: state.errorMessage
-  }
-}
