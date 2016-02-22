@@ -1,8 +1,5 @@
 import { CALL_API, Schemas } from '../middleware/api'
-
-export const USER_REQUEST = 'USER_REQUEST'
-export const USER_SUCCESS = 'USER_SUCCESS'
-export const USER_FAILURE = 'USER_FAILURE'
+import * as ActionTypes from '../constants/ActionTypes'
 
 // Fetches a single user from Github API.
 // Relies on the custom API middleware defined in ../middleware/api.js.
@@ -29,9 +26,7 @@ export function loadUser(login, requiredFields = []) {
   }
 }
 
-export const REPO_REQUEST = 'REPO_REQUEST'
-export const REPO_SUCCESS = 'REPO_SUCCESS'
-export const REPO_FAILURE = 'REPO_FAILURE'
+
 
 // Fetches a single repository from Github API.
 // Relies on the custom API middleware defined in ../middleware/api.js.
@@ -58,9 +53,7 @@ export function loadRepo(fullName, requiredFields = []) {
   }
 }
 
-export const STARRED_REQUEST = 'STARRED_REQUEST'
-export const STARRED_SUCCESS = 'STARRED_SUCCESS'
-export const STARRED_FAILURE = 'STARRED_FAILURE'
+
 
 // Fetches a page of starred repos by a particular user.
 // Relies on the custom API middleware defined in ../middleware/api.js.
@@ -93,9 +86,7 @@ export function loadStarred(login, nextPage) {
   }
 }
 
-export const STARGAZERS_REQUEST = 'STARGAZERS_REQUEST'
-export const STARGAZERS_SUCCESS = 'STARGAZERS_SUCCESS'
-export const STARGAZERS_FAILURE = 'STARGAZERS_FAILURE'
+
 
 // Fetches a page of stargazers for a particular repo.
 // Relies on the custom API middleware defined in ../middleware/api.js.

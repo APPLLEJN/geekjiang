@@ -8,8 +8,14 @@ import {
   reduxReactRouter,
   pushState,
 } from 'redux-router';
+// to support await/async
+import "babel-polyfill"
+import prepareFun from '../lib/prepareFun'
+prepareFun()
+@connect(state => {
+  return {errorMessage: state.errorMessage,resetErrorMessage,inputValue: '' }
+})
 
-@connect(state => {return {errorMessage: state.errorMessage,resetErrorMessage,inputValue: '' }})
 export default
 class App extends Component {
   static propTypes = {
