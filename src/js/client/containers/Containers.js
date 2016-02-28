@@ -8,7 +8,7 @@ export default class Containers extends Component {
   render() {
     //const { increment, incrementIfOdd, incrementAsync, decrement, counter } = this.props
     return (
-      <div className={ style.background }>
+      <div className={style.background}>
         <h3>hello world</h3>
       </div>  
     )
