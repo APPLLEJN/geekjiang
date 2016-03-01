@@ -1,9 +1,27 @@
-import React, { PropTypes } from 'react'
+import React, { Component, PropTypes } from 'react'
+import {Link} from 'react-router'
+import style from '../../../css/common.css'
 
-const　Header = ({title = '诊疗圈'}) => (
-   <div className="header">{title}</div>
-)
-Header.propTypes = {
-   title: React.PropTypes.string   
+export default class Header extends Component {
+
+  render() {
+    //const { increment, incrementIfOdd, incrementAsync, decrement, counter } = this.props
+    return (
+      <div className={style.header}>
+      	<div className={style.logo}>Geek Jiang</div>
+      	<div className={style.menu}>
+			<ul>
+				<li> <Link to='/'>Home</Link></li>
+				<li> <Link to='/'>About</Link></li>
+				<li> <Link to='/'>Article</Link></li>
+				<li> <Link to='/'>Contact</Link></li>
+			</ul>
+      	</div>	
+      </div>  
+    )
+  }
 }
-export default Header
+
+
+
+

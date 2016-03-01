@@ -11,7 +11,7 @@ import {
 // to support await/async
 import "babel-polyfill"
 import prepareFun from '../lib/prepareFun'
-prepareFun()
+//prepareFun()
 @connect(state => {
   return {errorMessage: state.errorMessage,resetErrorMessage,inputValue: '' }
 })
