@@ -31,6 +31,7 @@ var webpackPort = 8080
 
 const getMarkup = (store) => {
   const initialState = serialize(store.getState());
+  console.log(initialState, '=======')
   const markup = renderToString(
     <Provider store={store} key="provider">
       <ReduxRouter/>

@@ -50,7 +50,7 @@ const rootReducer = combineReducers({
   entities,
   pagination,
   errorMessage,
-  routing: routerStateReducer
+  router: routerStateReducer
 })
 
 

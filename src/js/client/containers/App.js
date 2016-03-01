@@ -15,9 +15,9 @@ import prepareFun from '../lib/prepareFun'
 @connect(state => {
   return {errorMessage: state.errorMessage,resetErrorMessage,inputValue: '' }
 })
-
 export default
 class App extends Component {
+
   static propTypes = {
      // Injected by React Redux
       errorMessage: PropTypes.string,
