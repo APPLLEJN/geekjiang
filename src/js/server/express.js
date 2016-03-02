@@ -42,6 +42,7 @@ const getMarkup = (store) => {
       <head>
         <title>Redux React Router – Server rendering Example</title>
         <link rel="stylesheet" type="text/css" href="http://localhost:8080/static/style.css" />
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.3.15/slick.css" />
       </head>
       <body>
         <div id="root">${markup}</div>

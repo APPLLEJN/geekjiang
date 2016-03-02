@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react'
 import style from '../../../css/common.css'
-import {Header} from '../components'
+import {Header, Slider} from '../components'
 
 export default class Containers extends Component {
 
@@ -10,6 +10,7 @@ export default class Containers extends Component {
       <div className={style.background}>
         <div className={style.wrapper}>
           <Header/>
+          <Slider/>
         </div>
       </div>  
     )

@@ -6,7 +6,7 @@ import RepoPage from './client/containers/RepoPage'
 import Containers from './client/containers/Containers'
 
 export default (
-  <Route path="/"  component={App}>
-  	<Route path="/Containers" component={Containers}/>
+  <Route path="/"  component={Containers}>
+  	<Route path="/App" component={App}/>
   </Route>
 )

@@ -47,7 +47,7 @@ export default class ImgSlider extends React.Component {
   slideNext() {
     this.setState({
       slideTransform:{
-        transform: `translate3d(${-(this.state.startIndex+1)* 25}%, 0px, 0px)`
+        transform: `translate3d(${-(this.state.startIndex+1)* 25}%, 0px, 0px)`,
       }
     })
   }

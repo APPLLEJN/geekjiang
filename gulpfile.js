@@ -11,8 +11,7 @@ var webpackConfig = require('./webpack/webpack.config')
 var zip = require('gulp-zip')
 var package = require("./package.json")
 
-gulp.task('default', function () {
-})
+gulp.task('default', function () {})
 gulp.task('build', build)
 gulp.task('test', test)
 gulp.task('watch-test', watchTest)
