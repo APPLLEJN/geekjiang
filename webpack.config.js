@@ -1,17 +1,13 @@
-var path = require('path')
 var webpack = require('webpack')
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
-
-module.exports = {
+var ExtractTextPlugin = require('extract-text-webpack-plugin')
+var HOST = process.env.HOST || 'localhost'
+var WEBPACK_PORT = process.env.PORT ? (parseInt(process.env.PORT, 10) + 1) : 8051
+var webpackConfig = {
   devtool: 'cheap-module-eval-source-map',
-  entry: [
-    'webpack/hot/dev-server',
-    'webpack-dev-server/client?http://localhost:8080',
-    './src/js/client/index.js'
-  ],
+  entry: './src/js/client/index.js',
   output: {
     filename: 'bundle.js',
-    publicPath: '/static/'
+    publicPath: 'http://' + HOST + ':' + WEBPACK_PORT + '/'
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
@@ -36,21 +32,4 @@ module.exports = {
   }
 }
 
-
-// When inside Redux repo, prefer src to compiled version.
-// You can safely delete these lines in your project.
-// var reduxSrc = path.join(__dirname, '..', '..', 'src')
-// var reduxNodeModules = path.join(__dirname, '..', '..', 'node_modules')
-// var fs = require('fs')
-// if (fs.existsSync(reduxSrc) && fs.existsSync(reduxNodeModules)) {
-//   // Resolve Redux to source
-//   module.exports.resolve = { alias: { 'redux': reduxSrc } }
-//   // Compile Redux from source
-//   module.exports.module.loaders.push({
-//     test: /\.js$/,
-//     loaders: [ 'babel' ],
-//     include: reduxSrc
-//   })
-// }
-
-// export default config;
+module.export = webpackConfig

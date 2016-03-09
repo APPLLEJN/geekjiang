@@ -41,13 +41,13 @@ const getMarkup = (store) => {
     <html>
       <head>
         <title>Redux React Router – Server rendering Example</title>
-        <link rel="stylesheet" type="text/css" href="http://localhost:8080/static/style.css" />
+        <link rel="stylesheet" type="text/css" href="http://localhost:8081/static/style.css" />
         <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.3.15/slick.css" />
       </head>
       <body>
         <div id="root">${markup}</div>
         <script>window.__initialState = ${initialState};</script>
-        <script src="http://localhost:8080/static/bundle.js"></script>
+        <script src="http://localhost:8081/static/bundle.js"></script>
       </body>
     </html>
   `;
