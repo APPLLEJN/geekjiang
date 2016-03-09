@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "geekjiang",
   "scripts": {
-    "webpack": "webpack-dev-server",
+    "webpack": "node ./webpack-dev-server.js ",
     "server": "node ./src/js/server/server.js",
     "start": "npm run webpack & npm run server",
     "test": "NODE_ENV=test mocha --recursive --compilers js:babel-core/register --require ./src/js/client/test/setup.js",

@@ -1,13 +1,20 @@
 var webpack = require('webpack')
+var path = require('path')
 var ExtractTextPlugin = require('extract-text-webpack-plugin')
 var HOST = process.env.HOST || 'localhost'
 var WEBPACK_PORT = process.env.PORT ? (parseInt(process.env.PORT, 10) + 1) : 8051
+var ASSERTPATH = path.join(__dirname, '../dist/')
 var webpackConfig = {
   devtool: 'cheap-module-eval-source-map',
-  entry: './src/js/client/index.js',
+  entry: [
+     'webpack/hot/dev-server',
+     'webpack-dev-server/client?http://' + HOST + ':' + WEBPACK_PORT + '/',
+     './src/js/client/index.js'
+  ],
   output: {
+    path: ASSERTPATH,
+    publicPath: 'http://' + HOST + ':' + WEBPACK_PORT + '/',
     filename: 'bundle.js',
-    publicPath: 'http://' + HOST + ':' + WEBPACK_PORT + '/'
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
@@ -31,5 +38,4 @@ var webpackConfig = {
     ]
   }
 }
-
 module.export = webpackConfig

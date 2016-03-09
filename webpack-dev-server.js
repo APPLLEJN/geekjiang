@@ -6,7 +6,6 @@ var tenYears = 1000 * 60 * 60 * 24 * 365 * 10
 var HOST = process.env.HOST || 'localhost'
 var WEBPACK_PORT = process.env.PORT ? (parseInt(process.env.PORT, 10) + 1) : 8051
 var webpackConfig = require('./webpack.config')
-
 var compiler = webpack(webpackConfig)
 
 var serverOptions = {

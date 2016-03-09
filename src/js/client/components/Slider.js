@@ -12,11 +12,11 @@ export default class SimpleSlider extends Component{
     };
     return (
       <Slider {...settings}>
-        <div><img src="/src/images/slider-1"/></div>
-        <div><img src="/src/images/slider-2"/></div>
-        <div><img src="/src/images/slider-3"/></div>
-        <div><img src="/src/images/slider-4"/></div>
-        <div><img src="/src/images/slider-5"/></div>
+        <div><img src="/src/images/slider-1.jpg"/></div>
+        <div><img src="/src/images/slider-2.jpg"/></div>
+        <div><img src="/src/images/slider-3.jpg"/></div>
+        <div><img src="/src/images/slider-4.jpg"/></div>
+        <div><img src="/src/images/slider-5.png"/></div>
       </Slider>
     );
   }
