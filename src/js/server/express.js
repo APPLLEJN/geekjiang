@@ -20,7 +20,7 @@ import {reduxReactRouter, match} from 'redux-router/server'; // 'redux-router/se
 
 var app = express()
 var port = 3000
-var webpackPort = 8080
+var webpackPort = 8081
 //var compiler = webpack(config)
 
 // var db = require('monk')('localhost:27017/geekjiang')
@@ -41,13 +41,13 @@ const getMarkup = (store) => {
     <html>
       <head>
         <title>Redux React Router – Server rendering Example</title>
-        <link rel="stylesheet" type="text/css" href="http://localhost:8081/static/style.css" />
+        <link rel="stylesheet" type="text/css" href="http://localhost:8081/style.css" />
         <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.3.15/slick.css" />
       </head>
       <body>
         <div id="root">${markup}</div>
         <script>window.__initialState = ${initialState};</script>
-        <script src="http://localhost:8081/static/bundle.js"></script>
+        <script src="http://localhost:8081/bundle.js"></script>
       </body>
     </html>
   `;

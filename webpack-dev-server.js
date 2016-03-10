@@ -7,7 +7,6 @@ var HOST = process.env.HOST || 'localhost'
 var WEBPACK_PORT = process.env.PORT ? (parseInt(process.env.PORT, 10) + 1) : 8051
 var webpackConfig = require('./webpack.config')
 var compiler = webpack(webpackConfig)
-
 var serverOptions = {
   contentBase: 'http://' + HOST + ':' + WEBPACK_PORT,
   quiet: false,

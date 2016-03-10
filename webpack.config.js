@@ -3,14 +3,12 @@ var path = require('path')
 var ExtractTextPlugin = require('extract-text-webpack-plugin')
 var HOST = process.env.HOST || 'localhost'
 var WEBPACK_PORT = process.env.PORT ? (parseInt(process.env.PORT, 10) + 1) : 8051
-var ASSERTPATH = path.join(__dirname, '../dist/')
+var ASSERTPATH = path.join(__dirname, '/')
 var webpackConfig = {
   devtool: 'cheap-module-eval-source-map',
-  entry: [
-     'webpack/hot/dev-server',
-     'webpack-dev-server/client?http://' + HOST + ':' + WEBPACK_PORT + '/',
-     './src/js/client/index.js'
-  ],
+  entry: {    
+    'index': ['./src/js/client/index.js','webpack/hot/dev-server','webpack-dev-server/client?http://' + HOST + ':' + WEBPACK_PORT + '/']
+  },
   output: {
     path: ASSERTPATH,
     publicPath: 'http://' + HOST + ':' + WEBPACK_PORT + '/',
@@ -38,4 +36,5 @@ var webpackConfig = {
     ]
   }
 }
-module.export = webpackConfig
+
+module.exports = webpackConfig
