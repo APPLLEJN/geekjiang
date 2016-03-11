@@ -10,7 +10,7 @@ var compiler = webpack(webpackConfig)
 var serverOptions = {
   contentBase: 'http://' + HOST + ':' + WEBPACK_PORT,
   quiet: false,
-  // noInfo: false,
+  noInfo: true,
   hot: true,
   inline: true,
   lazy: false,
@@ -24,7 +24,6 @@ var serverOptions = {
 };
 
 var app = new Express()
-
 app.use(require('webpack-dev-middleware')(compiler, serverOptions))
 app.use(require('webpack-hot-middleware')(compiler))
 

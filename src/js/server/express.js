@@ -28,7 +28,7 @@ var webpackPort = 8081
 // images.find({}, function(err, docs) {
 //    console.log(docs)
 // })
-
+app.use(express.static(path.resolve('src')))
 const getMarkup = (store) => {
   const initialState = serialize(store.getState());
   const markup = renderToString(
@@ -41,13 +41,13 @@ const getMarkup = (store) => {
     <html>
       <head>
         <title>Redux React Router – Server rendering Example</title>
-        <link rel="stylesheet" type="text/css" href="http://localhost:8081/style.css" />
-        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.3.15/slick.css" />
+        <link rel="stylesheet" type="text/css" href="http://localhost:8051/style.css" />
+        <link rel="stylesheet" type="text/css" href="http://localhost:3000/css/slick.css" />
       </head>
       <body>
         <div id="root">${markup}</div>
         <script>window.__initialState = ${initialState};</script>
-        <script src="http://localhost:8081/bundle.js"></script>
+        <script src="http://localhost:8051/bundle.js"></script>
       </body>
     </html>
   `;
