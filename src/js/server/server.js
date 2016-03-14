@@ -7,4 +7,4 @@ require.extensions['.css'] = () => {
   return;
 };
 
-require('./express')
+require('./main')
