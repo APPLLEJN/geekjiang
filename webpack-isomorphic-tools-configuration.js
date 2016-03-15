@@ -1,6 +1,6 @@
-import Webpack_isomorphic_tools_plugin from 'webpack-isomorphic-tools/plugin'
+var Webpack_isomorphic_tools_plugin = require('webpack-isomorphic-tools/plugin')
 
-export default
+var isomorphicWebpackCongig =
 {
   assets:
   {
@@ -10,3 +10,5 @@ export default
     }
   }
 }
+
+module.exports = isomorphicWebpackCongig

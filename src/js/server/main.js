@@ -4,7 +4,7 @@ var Webpack_isomorphic_tools = require('webpack-isomorphic-tools')
 var project_base_path = require('path').resolve(__dirname, '..')
 
 // this global variable will be used later in express middleware
-global.webpack_isomorphic_tools = new Webpack_isomorphic_tools(require('../../webpack-isomorphic-tools-configuration'))
+global.webpack_isomorphic_tools = new Webpack_isomorphic_tools(require('../../../webpack-isomorphic-tools-configuration'))
 // enter development mode if needed
 // (you may also prefer to use a Webpack DefinePlugin variable)
 .development(process.env.NODE_ENV === 'development')
