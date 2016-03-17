@@ -7,7 +7,7 @@ var project_base_path = require('path').resolve(__dirname, '..')
 global.webpack_isomorphic_tools = new Webpack_isomorphic_tools(require('../../../webpack-isomorphic-tools-configuration'))
 // enter development mode if needed
 // (you may also prefer to use a Webpack DefinePlugin variable)
-.development(process.env.NODE_ENV === 'development')
+.development(true)
 // initializes a server-side instance of webpack-isomorphic-tools
 // (the first parameter is the base path for your project
 //  and is equal to the "context" parameter of you Webpack configuration)
@@ -18,5 +18,6 @@ global.webpack_isomorphic_tools = new Webpack_isomorphic_tools(require('../../..
 {
   // webpack-isomorphic-tools is all set now.
   // here goes all your web application code:
+  console.log('Webpack is all set now....')
   require('./express')
 })

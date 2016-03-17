@@ -5,5 +5,7 @@
   "styles": {
     "index": "http://localhost:8051/style.css"
   },
-  "assets": {}
+  "assets": {
+    "./src/images/bg.jpg": "http://localhost:8051/a53b72139d57b7440759f7684ce6dd23.jpg"
+  }
 }

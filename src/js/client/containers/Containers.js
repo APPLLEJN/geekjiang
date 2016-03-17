@@ -6,17 +6,14 @@ export default class Containers extends Component {
 
   render() {
     //const { increment, incrementIfOdd, incrementAsync, decrement, counter } = this.props
+    const bg = require('../../../images/bg.jpg');
     return (
       <div className={style.background}>
         <div className={style.wrapper}>
           <Header/>
           <Slider/>
         </div>
-      </div>  
+      </div>
     )
   }
 }
-
-
-
-

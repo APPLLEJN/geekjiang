@@ -4,16 +4,11 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin')
 var HOST = process.env.HOST || 'localhost'
 var WEBPACK_PORT = process.env.PORT ? (parseInt(process.env.PORT, 10) + 1) : 8051
 var ASSERTPATH = path.join(__dirname, '/')
-
+var WebpackIsomorphicTools = require('webpack-isomorphic-tools');
 var Webpack_isomorphic_tools_plugin = require('webpack-isomorphic-tools/plugin')
 
-var webpack_isomorphic_tools_plugin =
-  // webpack-isomorphic-tools settings reside in a separate .js file
-  // (because they will be used in the web server code too).
-  new Webpack_isomorphic_tools_plugin(require('./webpack-isomorphic-tools-configuration'))
-  // also enter development mode since it's a development webpack configuration
-  // (see below for explanation)
-  .development()
+var webpack_isomorphic_tools_plugin = new Webpack_isomorphic_tools_plugin(require('./webpack-isomorphic-tools-configuration'))
+
 var webpackConfig = {
   devtool: 'cheap-module-eval-source-map',
   entry: {
@@ -27,7 +22,7 @@ var webpackConfig = {
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
     new ExtractTextPlugin('style.css', {allChunks: true }),
-    webpack_isomorphic_tools_plugin,
+    webpack_isomorphic_tools_plugin.development(),
   ],
   module: {
     loaders: [

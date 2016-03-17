@@ -30,11 +30,17 @@ var webpackPort = 8081
 //    console.log(docs)
 // })
 // 没有挂载路径的中间件，应用的每个请求都会执行该中间件
-app.use(page_rendering_middleware);
 app.get('/login', function(req, res) {
   // TO DO
 })
 
+var express = require('express');
+var app = express();
+//设置跨域访问
+app.all('*', function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  next();
+});
 app.use(express.static(path.resolve('src')))
 const picture = require('../..images/bg.jpg')
 const getMarkup = (store) => {
@@ -44,7 +50,6 @@ const getMarkup = (store) => {
       <ReduxRouter/>
     </Provider>
   );
-
   return `<!doctype html>
     <html>
       <head>
@@ -72,6 +77,11 @@ const getMarkup = (store) => {
 app.use((req, res) => {
   // TO DO
   // console.log(createStore, createMemoryHistory)
+  if (true) { //__DEVELOPMENT__
+    // Do not cache webpack stats: the script file would change since
+    // hot module replacement is enabled in the development env
+    webpackIsomorphicTools.refresh();
+  }
   const store = reduxReactRouter({ routes, createHistory: createMemoryHistory })(createStore)(reducer);
   const query = qs.stringify(req.query);
   const url = req.path + (query.length ? '?' + query : '');
