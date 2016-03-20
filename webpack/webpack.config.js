@@ -10,9 +10,12 @@ var Webpack_isomorphic_tools_plugin = require('webpack-isomorphic-tools/plugin')
 var webpack_isomorphic_tools_plugin = new Webpack_isomorphic_tools_plugin(require('./webpack-isomorphic-tools-configuration'))
 
 var webpackConfig = {
-  devtool: 'cheap-module-eval-source-map',
+  devtool: 'inline-source-map',
   entry: {
-    'index': ['./src/js/client/index.js','webpack/hot/dev-server','webpack-dev-server/client?http://' + HOST + ':' + WEBPACK_PORT + '/']
+    'index': ['./src/js/client/index.js',
+              'webpack/hot/dev-server',
+              'webpack-hot-middleware/client?path=http://' + HOST + ':' + WEBPACK_PORT + '/__webpack_hmr'
+            ]
   },
   output: {
     path: ASSERTPATH,
@@ -22,6 +25,12 @@ var webpackConfig = {
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
     new ExtractTextPlugin('style.css', {allChunks: true }),
+    new webpack.DefinePlugin({
+      __CLIENT__: true,
+      __SERVER__: false,
+      __DEVELOPMENT__: true,
+      __DEVTOOLS__: true  // <-------- DISABLE redux-devtools HERE
+    }),
     webpack_isomorphic_tools_plugin.development(),
   ],
   module: {

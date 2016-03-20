@@ -1,6 +1,6 @@
 import React from 'react'
-import express from 'express'
 import webpack from 'webpack'
+import Express from 'express'
 import webpackDevMiddleware from 'webpack-dev-middleware'
 import webpackHotMiddleware from 'webpack-hot-middleware'
 import path from 'path'
@@ -12,14 +12,13 @@ import serialize from 'serialize-javascript';
 import { createMemoryHistory } from 'history';
 import open from 'open'
 
-import config from '../../../webpack.config'
+import config from '../../../webpack/webpack.config'
 import reducer from '../client/reducers';
 import routes from '../routes';
 import {ReduxRouter} from 'redux-router';
 import {reduxReactRouter, match} from 'redux-router/server'; // 'redux-router/server';
-import page_rendering_middleware from './middleware'; // 'redux-router/server';
 
-var app = express()
+var app = Express()
 var port = 3000
 var webpackPort = 8081
 //var compiler = webpack(config)
@@ -42,7 +41,7 @@ app.all('*', function(req, res, next) {
   next();
 });
 app.use(express.static(path.resolve('src')))
-const picture = require('../..images/bg.jpg')
+const picture = require('../../images/bg.jpg')
 const getMarkup = (store) => {
   const initialState = serialize(store.getState());
   const markup = renderToString(

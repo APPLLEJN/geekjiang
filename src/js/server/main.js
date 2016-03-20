@@ -1,10 +1,16 @@
 var Webpack_isomorphic_tools = require('webpack-isomorphic-tools')
 
 // this must be equal to your Webpack configuration "context" parameter
-var project_base_path = require('path').resolve(__dirname, '..')
-
+var project_base_path = require('path').resolve(__dirname, '../../../')
+/**
+ * Define isomorphic constants.
+ */
+global.__CLIENT__ = false;
+global.__SERVER__ = true;
+global.__DISABLE_SSR__ = false;  // <----- DISABLES SERVER SIDE RENDERING FOR ERROR DEBUGGING
+global.__DEVELOPMENT__ = process.env.NODE_ENV !== 'production';
 // this global variable will be used later in express middleware
-global.webpack_isomorphic_tools = new Webpack_isomorphic_tools(require('../../../webpack-isomorphic-tools-configuration'))
+global.webpackIsomorphicTools = new Webpack_isomorphic_tools(require('../../../webpack/webpack-isomorphic-tools-configuration'))
 // enter development mode if needed
 // (you may also prefer to use a Webpack DefinePlugin variable)
 .development(true)
@@ -18,6 +24,5 @@ global.webpack_isomorphic_tools = new Webpack_isomorphic_tools(require('../../..
 {
   // webpack-isomorphic-tools is all set now.
   // here goes all your web application code:
-  console.log('Webpack is all set now....')
   require('./express')
 })
