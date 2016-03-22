@@ -17,6 +17,7 @@ import reducer from '../client/reducers';
 import routes from '../routes';
 import {ReduxRouter} from 'redux-router';
 import {reduxReactRouter, match} from 'redux-router/server'; // 'redux-router/server';
+import page_rendering_middleware from './middleware'; // 'redux-router/server';
 
 var app = express()
 var port = 3000
@@ -28,7 +29,14 @@ var webpackPort = 8081
 // images.find({}, function(err, docs) {
 //    console.log(docs)
 // })
+// 没有挂载路径的中间件，应用的每个请求都会执行该中间件
+app.use(page_rendering_middleware);
+app.get('/login', function(req, res) {
+  // TO DO
+})
+
 app.use(express.static(path.resolve('src')))
+const picture = require('../..images/bg.jpg')
 const getMarkup = (store) => {
   const initialState = serialize(store.getState());
   const markup = renderToString(
@@ -36,7 +44,7 @@ const getMarkup = (store) => {
       <ReduxRouter/>
     </Provider>
   );
-	
+
   return `<!doctype html>
     <html>
       <head>
@@ -46,6 +54,7 @@ const getMarkup = (store) => {
       </head>
       <body>
         <div id="root">${markup}</div>
+        <img src={picture}/>
         <script>window.__initialState = ${initialState};</script>
         <script src="http://localhost:8051/bundle.js"></script>
       </body>
@@ -61,7 +70,7 @@ const getMarkup = (store) => {
 // app.use(webpackHotMiddleware(compiler));
 
 app.use((req, res) => {
-  // TO DO 
+  // TO DO
   // console.log(createStore, createMemoryHistory)
   const store = reduxReactRouter({ routes, createHistory: createMemoryHistory })(createStore)(reducer);
   const query = qs.stringify(req.query);
@@ -89,6 +98,3 @@ app.listen(port, function(error) {
     console.info("==> 🌎  Listening on port %s. Open up http://localhost:%s/ in your browser.", port, port)
   }
 })
-
-
-
