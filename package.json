@@ -81,6 +81,7 @@
     "redux-thunk": "^0.1.0",
     "serialize-javascript": "^1.1.2",
     "style-loader": "^0.13.0",
+    "superagent": "^1.8.1",
     "url-loader": "^0.5.7",
     "webpack-isomorphic-tools": "^2.2.31"
   },

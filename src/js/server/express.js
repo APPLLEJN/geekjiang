@@ -17,7 +17,7 @@ import reducer from '../client/reducers';
 import routes from '../routes';
 import {ReduxRouter} from 'redux-router';
 import {reduxReactRouter, match} from 'redux-router/server'; // 'redux-router/server';
-
+import request from 'superagent'
 var app = Express()
 var port = 3000
 var webpackPort = 8081
@@ -29,12 +29,17 @@ var webpackPort = 8081
 //    console.log(docs)
 // })
 // 没有挂载路径的中间件，应用的每个请求都会执行该中间件
-app.get('/login', function(req, res) {
-  // TO DO
-})
 
 var express = require('express');
 var app = express();
+app.get('/login', function(req, res) {
+  // TO DO
+  request
+  .get('http://localhost:3050/login')
+  .end(function(err, res){
+    console.log(`this is err ${err}`)
+  })
+})
 //设置跨域访问
 app.all('*', function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
