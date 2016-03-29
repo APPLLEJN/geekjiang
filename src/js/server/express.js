@@ -46,7 +46,6 @@ app.all('*', function(req, res, next) {
   next();
 });
 app.use(express.static(path.resolve('src')))
-const picture = require('../../images/bg.jpg')
 const getMarkup = (store) => {
   const initialState = serialize(store.getState());
   const markup = renderToString(
@@ -57,13 +56,13 @@ const getMarkup = (store) => {
   return `<!doctype html>
     <html>
       <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
         <title>Redux React Router – Server rendering Example</title>
         <link rel="stylesheet" type="text/css" href="http://localhost:8051/style.css" />
         <link rel="stylesheet" type="text/css" href="http://localhost:3000/css/slick.css" />
       </head>
       <body>
         <div id="root">${markup}</div>
-        <img src={picture}/>
         <script>window.__initialState = ${initialState};</script>
         <script src="http://localhost:8051/bundle.js"></script>
       </body>

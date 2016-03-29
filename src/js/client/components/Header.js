@@ -13,7 +13,7 @@ export default class Header extends Component {
         <img src = {image_path}/>
       	<div className={style.menu}>
     			<ul>
-    				<li> <Link to='/'>Home</Link></li>
+    				<li> <Link to='/Test'>Home</Link></li>
     				<li> <Link to='/'>About</Link></li>
     				<li> <Link to='/'>Article</Link></li>
     				<li> <Link to='/'>Contact</Link></li>
