@@ -6,9 +6,10 @@ import { persistState } from 'redux-devtools'
 import DevTools from '../containers/DevTools'
 import {reduxReactRouter} from 'redux-router'
 import createHistory from 'history/lib/createBrowserHistory'
+import routes from '../../routes'
 
 const enhancer = compose(
-  reduxReactRouter({ createHistory }),
+  reduxReactRouter({ routes, createHistory }),
   applyMiddleware(thunk),
   DevTools.instrument(),
   persistState(

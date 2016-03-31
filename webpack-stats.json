@@ -2,8 +2,8 @@
   "errors": [],
   "warnings": [],
   "version": "1.12.14",
-  "hash": "c12db616a4b1e2585a9d",
-  "time": 9963,
+  "hash": "a390b8ce7f0cad4fec6a",
+  "time": 7514,
   "publicPath": "http://localhost:8051/",
   "assetsByChunkName": {
     "index": [
@@ -21,7 +21,7 @@
     },
     {
       "name": "bundle.js",
-      "size": 4973019,
+      "size": 4973397,
       "chunks": [
         0
       ],
@@ -49,7 +49,7 @@
       "initial": true,
       "entry": true,
       "extraAsync": false,
-      "size": 1763360,
+      "size": 1763642,
       "names": [
         "index"
       ],
@@ -57,7 +57,7 @@
         "bundle.js",
         "style.css"
       ],
-      "hash": "400ad8222705df26c3cb",
+      "hash": "fb0c2a4d6f4a1865b62f",
       "parents": [],
       "origins": [
         {
@@ -9715,7 +9715,7 @@
         0
       ],
       "assets": [],
-      "issuer": "/Users/jiangnan/github/geekjiang/node_modules/babel-loader/index.js!/Users/jiangnan/github/geekjiang/src/js/client/containers/Root.dev.js",
+      "issuer": "/Users/jiangnan/github/geekjiang/node_modules/babel-loader/index.js!/Users/jiangnan/github/geekjiang/src/js/client/containers/Root.prod.js",
       "failed": false,
       "errors": 0,
       "warnings": 0,
@@ -10633,7 +10633,7 @@
       "name": "./src/js/routes.js",
       "index": 180,
       "index2": 716,
-      "size": 1147,
+      "size": 1050,
       "cacheable": true,
       "built": true,
       "optional": false,
@@ -10642,7 +10642,7 @@
         0
       ],
       "assets": [],
-      "issuer": "/Users/jiangnan/github/geekjiang/node_modules/babel-loader/index.js!/Users/jiangnan/github/geekjiang/src/js/client/containers/Root.dev.js",
+      "issuer": "/Users/jiangnan/github/geekjiang/node_modules/babel-loader/index.js!/Users/jiangnan/github/geekjiang/src/js/client/store/configureStore.js",
       "failed": false,
       "errors": 0,
       "warnings": 0,
@@ -10664,9 +10664,18 @@
           "type": "cjs require",
           "userRequest": "../../routes",
           "loc": "16:14-37"
+        },
+        {
+          "moduleId": 977,
+          "moduleIdentifier": "/Users/jiangnan/github/geekjiang/node_modules/babel-loader/index.js!/Users/jiangnan/github/geekjiang/src/js/client/store/configureStore.js",
+          "module": "./src/js/client/store/configureStore.js",
+          "moduleName": "./src/js/client/store/configureStore.js",
+          "type": "cjs require",
+          "userRequest": "../../routes",
+          "loc": "30:14-37"
         }
       ],
-      "source": "'use strict';\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n\nvar _react = require('react');\n\nvar _react2 = _interopRequireDefault(_react);\n\nvar _reactRouter = require('react-router');\n\nvar _App = require('./client/containers/App');\n\nvar _App2 = _interopRequireDefault(_App);\n\nvar _UserPage = require('./client/containers/UserPage');\n\nvar _UserPage2 = _interopRequireDefault(_UserPage);\n\nvar _RepoPage = require('./client/containers/RepoPage');\n\nvar _RepoPage2 = _interopRequireDefault(_RepoPage);\n\nvar _Containers = require('./client/containers/Containers');\n\nvar _Containers2 = _interopRequireDefault(_Containers);\n\nvar _Test = require('./client/components/Test');\n\nvar _Test2 = _interopRequireDefault(_Test);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nexports.default = _react2.default.createElement(\n  _reactRouter.Route,\n  { path: '/', component: _Containers2.default },\n  _react2.default.createElement(_reactRouter.Route, { path: '/App', component: _App2.default }),\n  _react2.default.createElement(_reactRouter.Route, { path: '/Test', component: _Test2.default })\n);"
+      "source": "'use strict';\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n\nvar _react = require('react');\n\nvar _react2 = _interopRequireDefault(_react);\n\nvar _reactRouter = require('react-router');\n\nvar _App = require('./client/containers/App');\n\nvar _App2 = _interopRequireDefault(_App);\n\nvar _UserPage = require('./client/containers/UserPage');\n\nvar _UserPage2 = _interopRequireDefault(_UserPage);\n\nvar _RepoPage = require('./client/containers/RepoPage');\n\nvar _RepoPage2 = _interopRequireDefault(_RepoPage);\n\nvar _Containers = require('./client/containers/Containers');\n\nvar _Containers2 = _interopRequireDefault(_Containers);\n\nvar _Test = require('./client/components/Test');\n\nvar _Test2 = _interopRequireDefault(_Test);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nexports.default = _react2.default.createElement(\n  _reactRouter.Route,\n  { path: '/', component: _Containers2.default },\n  _react2.default.createElement(_reactRouter.Route, { path: '/test', component: _Test2.default })\n);"
     },
     {
       "id": 181,
@@ -13851,7 +13860,7 @@
         0
       ],
       "assets": [],
-      "issuer": "/Users/jiangnan/github/geekjiang/node_modules/lodash/_hashGet.js",
+      "issuer": "/Users/jiangnan/github/geekjiang/node_modules/lodash/_Hash.js",
       "failed": false,
       "errors": 0,
       "warnings": 0,
@@ -15348,7 +15357,7 @@
         0
       ],
       "assets": [],
-      "issuer": "/Users/jiangnan/github/geekjiang/node_modules/lodash/_isIterateeCall.js",
+      "issuer": "/Users/jiangnan/github/geekjiang/node_modules/lodash/isArrayLikeObject.js",
       "failed": false,
       "errors": 0,
       "warnings": 0,
@@ -16345,7 +16354,7 @@
         0
       ],
       "assets": [],
-      "issuer": "/Users/jiangnan/github/geekjiang/node_modules/lodash/_baseDifference.js",
+      "issuer": "/Users/jiangnan/github/geekjiang/node_modules/lodash/unzip.js",
       "failed": false,
       "errors": 0,
       "warnings": 0,
@@ -17348,7 +17357,7 @@
         0
       ],
       "assets": [],
-      "issuer": "/Users/jiangnan/github/geekjiang/node_modules/redux-router/lib/ReduxRouter.js",
+      "issuer": "/Users/jiangnan/github/geekjiang/node_modules/redux-router/lib/client.js",
       "failed": false,
       "errors": 0,
       "warnings": 0,
@@ -18193,7 +18202,7 @@
         0
       ],
       "assets": [],
-      "issuer": "/Users/jiangnan/github/geekjiang/node_modules/babel-polyfill/node_modules/core-js/fn/regexp/escape.js",
+      "issuer": "/Users/jiangnan/github/geekjiang/node_modules/babel-polyfill/node_modules/core-js/shim.js",
       "failed": false,
       "errors": 0,
       "warnings": 0,
@@ -18455,7 +18464,7 @@
         0
       ],
       "assets": [],
-      "issuer": "/Users/jiangnan/github/geekjiang/node_modules/babel-polyfill/node_modules/core-js/modules/es6.object.define-properties.js",
+      "issuer": "/Users/jiangnan/github/geekjiang/node_modules/babel-polyfill/node_modules/core-js/modules/es6.symbol.js",
       "failed": false,
       "errors": 0,
       "warnings": 0,
@@ -18906,7 +18915,7 @@
         0
       ],
       "assets": [],
-      "issuer": "/Users/jiangnan/github/geekjiang/node_modules/babel-polyfill/node_modules/core-js/modules/core.regexp.escape.js",
+      "issuer": "/Users/jiangnan/github/geekjiang/node_modules/babel-polyfill/node_modules/core-js/modules/es6.symbol.js",
       "failed": false,
       "errors": 0,
       "warnings": 0,
@@ -20537,7 +20546,7 @@
         0
       ],
       "assets": [],
-      "issuer": "/Users/jiangnan/github/geekjiang/node_modules/babel-polyfill/node_modules/core-js/modules/es6.object.seal.js",
+      "issuer": "/Users/jiangnan/github/geekjiang/node_modules/babel-polyfill/node_modules/core-js/modules/es6.object.freeze.js",
       "failed": false,
       "errors": 0,
       "warnings": 0,
@@ -23261,7 +23270,7 @@
         0
       ],
       "assets": [],
-      "issuer": "/Users/jiangnan/github/geekjiang/node_modules/babel-polyfill/node_modules/core-js/modules/es6.object.create.js",
+      "issuer": "/Users/jiangnan/github/geekjiang/node_modules/babel-polyfill/node_modules/core-js/modules/es6.symbol.js",
       "failed": false,
       "errors": 0,
       "warnings": 0,
@@ -23874,7 +23883,7 @@
         0
       ],
       "assets": [],
-      "issuer": "/Users/jiangnan/github/geekjiang/node_modules/babel-polyfill/node_modules/core-js/modules/es6.object.get-prototype-of.js",
+      "issuer": "/Users/jiangnan/github/geekjiang/node_modules/babel-polyfill/node_modules/core-js/modules/es6.object.get-own-property-descriptor.js",
       "failed": false,
       "errors": 0,
       "warnings": 0,
@@ -25753,7 +25762,7 @@
         0
       ],
       "assets": [],
-      "issuer": "/Users/jiangnan/github/geekjiang/node_modules/babel-polyfill/node_modules/core-js/modules/es6.number.is-safe-integer.js",
+      "issuer": "/Users/jiangnan/github/geekjiang/node_modules/babel-polyfill/node_modules/core-js/modules/es6.number.is-integer.js",
       "failed": false,
       "errors": 0,
       "warnings": 0,
@@ -33153,7 +33162,7 @@
         0
       ],
       "assets": [],
-      "issuer": "/Users/jiangnan/github/geekjiang/node_modules/lodash/union.js",
+      "issuer": "/Users/jiangnan/github/geekjiang/node_modules/lodash/zip.js",
       "failed": false,
       "errors": 0,
       "warnings": 0,
@@ -33536,7 +33545,7 @@
       "name": "./src/js/client/components/Header.js",
       "index": 644,
       "index2": 638,
-      "size": 4024,
+      "size": 4312,
       "cacheable": true,
       "built": true,
       "optional": false,
@@ -33569,7 +33578,7 @@
           "loc": "20:14-33"
         }
       ],
-      "source": "'use strict';\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\nexports.default = undefined;\n\nvar _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if (\"value\" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();\n\nvar _react = require('react');\n\nvar _react2 = _interopRequireDefault(_react);\n\nvar _reactRouter = require('react-router');\n\nvar _common = require('../../../css/common.css');\n\nvar _common2 = _interopRequireDefault(_common);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\"Cannot call a class as a function\"); } }\n\nfunction _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError(\"this hasn't been initialised - super() hasn't been called\"); } return call && (typeof call === \"object\" || typeof call === \"function\") ? call : self; }\n\nfunction _inherits(subClass, superClass) { if (typeof superClass !== \"function\" && superClass !== null) { throw new TypeError(\"Super expression must either be null or a function, not \" + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }\n\nvar Header = function (_Component) {\n  _inherits(Header, _Component);\n\n  function Header() {\n    _classCallCheck(this, Header);\n\n    return _possibleConstructorReturn(this, Object.getPrototypeOf(Header).apply(this, arguments));\n  }\n\n  _createClass(Header, [{\n    key: 'render',\n    value: function render() {\n      //const { increment, incrementIfOdd, incrementAsync, decrement, counter } = this.props\n      var image_path = require('../../../images/head.jpg');\n      return _react2.default.createElement(\n        'div',\n        { className: _common2.default.header },\n        _react2.default.createElement(\n          'div',\n          { className: _common2.default.logo },\n          'Geek Jiang'\n        ),\n        _react2.default.createElement('img', { src: image_path }),\n        _react2.default.createElement(\n          'div',\n          { className: _common2.default.menu },\n          _react2.default.createElement(\n            'ul',\n            null,\n            _react2.default.createElement(\n              'li',\n              null,\n              ' ',\n              _react2.default.createElement(\n                _reactRouter.Link,\n                { to: '/Test' },\n                'Home'\n              )\n            ),\n            _react2.default.createElement(\n              'li',\n              null,\n              ' ',\n              _react2.default.createElement(\n                _reactRouter.Link,\n                { to: '/' },\n                'About'\n              )\n            ),\n            _react2.default.createElement(\n              'li',\n              null,\n              ' ',\n              _react2.default.createElement(\n                _reactRouter.Link,\n                { to: '/' },\n                'Article'\n              )\n            ),\n            _react2.default.createElement(\n              'li',\n              null,\n              ' ',\n              _react2.default.createElement(\n                _reactRouter.Link,\n                { to: '/' },\n                'Contact'\n              )\n            )\n          )\n        )\n      );\n    }\n  }]);\n\n  return Header;\n}(_react.Component);\n\nexports.default = Header;"
+      "source": "'use strict';\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\nexports.default = undefined;\n\nvar _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if (\"value\" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();\n\nvar _react = require('react');\n\nvar _react2 = _interopRequireDefault(_react);\n\nvar _reactRouter = require('react-router');\n\nvar _common = require('../../../css/common.css');\n\nvar _common2 = _interopRequireDefault(_common);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\"Cannot call a class as a function\"); } }\n\nfunction _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError(\"this hasn't been initialised - super() hasn't been called\"); } return call && (typeof call === \"object\" || typeof call === \"function\") ? call : self; }\n\nfunction _inherits(subClass, superClass) { if (typeof superClass !== \"function\" && superClass !== null) { throw new TypeError(\"Super expression must either be null or a function, not \" + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }\n\nvar Header = function (_Component) {\n  _inherits(Header, _Component);\n\n  function Header() {\n    _classCallCheck(this, Header);\n\n    return _possibleConstructorReturn(this, Object.getPrototypeOf(Header).apply(this, arguments));\n  }\n\n  _createClass(Header, [{\n    key: 'render',\n    value: function render() {\n      //const { increment, incrementIfOdd, incrementAsync, decrement, counter } = this.props\n      var image_path = require('../../../images/head.jpg');\n      return _react2.default.createElement(\n        'div',\n        { className: _common2.default.header },\n        _react2.default.createElement(\n          'div',\n          { className: _common2.default.logo },\n          'Geek Jiang'\n        ),\n        _react2.default.createElement('img', { src: image_path }),\n        _react2.default.createElement(\n          'div',\n          { className: _common2.default.menu },\n          _react2.default.createElement(\n            'ul',\n            null,\n            _react2.default.createElement(\n              'li',\n              null,\n              ' ',\n              _react2.default.createElement(\n                _reactRouter.Link,\n                { to: '/test' },\n                'Test'\n              )\n            ),\n            _react2.default.createElement(\n              'li',\n              null,\n              ' ',\n              _react2.default.createElement(\n                _reactRouter.Link,\n                { to: '/home' },\n                'Home'\n              )\n            ),\n            _react2.default.createElement(\n              'li',\n              null,\n              ' ',\n              _react2.default.createElement(\n                _reactRouter.Link,\n                { to: '/about' },\n                'About'\n              )\n            ),\n            _react2.default.createElement(\n              'li',\n              null,\n              ' ',\n              _react2.default.createElement(\n                _reactRouter.Link,\n                { to: '/article' },\n                'Article'\n              )\n            ),\n            _react2.default.createElement(\n              'li',\n              null,\n              ' ',\n              _react2.default.createElement(\n                _reactRouter.Link,\n                { to: '/contact' },\n                'Contact'\n              )\n            )\n          )\n        )\n      );\n    }\n  }]);\n\n  return Header;\n}(_react.Component);\n\nexports.default = Header;"
     },
     {
       "id": 645,
@@ -35586,7 +35595,7 @@
         0
       ],
       "assets": [],
-      "issuer": "/Users/jiangnan/github/geekjiang/node_modules/react-slick/lib/mixins/event-handlers.js",
+      "issuer": "/Users/jiangnan/github/geekjiang/node_modules/react-slick/lib/mixins/helpers.js",
       "failed": false,
       "errors": 0,
       "warnings": 0,
@@ -36188,7 +36197,7 @@
       "name": "./src/js/client/components/Test.js",
       "index": 719,
       "index2": 713,
-      "size": 2726,
+      "size": 2702,
       "cacheable": true,
       "built": true,
       "optional": false,
@@ -36221,7 +36230,7 @@
           "loc": "43:12-29"
         }
       ],
-      "source": "'use strict';\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\nexports.default = undefined;\n\nvar _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if (\"value\" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();\n\nvar _react = require('react');\n\nvar _react2 = _interopRequireDefault(_react);\n\nvar _common = require('../../../css/common.css');\n\nvar _common2 = _interopRequireDefault(_common);\n\nvar _reactSlick = require('react-slick');\n\nvar _reactSlick2 = _interopRequireDefault(_reactSlick);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\"Cannot call a class as a function\"); } }\n\nfunction _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError(\"this hasn't been initialised - super() hasn't been called\"); } return call && (typeof call === \"object\" || typeof call === \"function\") ? call : self; }\n\nfunction _inherits(subClass, superClass) { if (typeof superClass !== \"function\" && superClass !== null) { throw new TypeError(\"Super expression must either be null or a function, not \" + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }\n\nvar Test = function (_Component) {\n  _inherits(Test, _Component);\n\n  function Test() {\n    _classCallCheck(this, Test);\n\n    return _possibleConstructorReturn(this, Object.getPrototypeOf(Test).apply(this, arguments));\n  }\n\n  _createClass(Test, [{\n    key: 'render',\n    value: function render() {\n      console.log('======-=-=-');\n      return _react2.default.createElement(\n        'div',\n        null,\n        _react2.default.createElement(\n          'div',\n          null,\n          '假的input'\n        ),\n        _react2.default.createElement(\n          'div',\n          null,\n          _react2.default.createElement('input', { type: 'text', value: '真的input' })\n        )\n      );\n    }\n  }]);\n\n  return Test;\n}(_react.Component);\n\nexports.default = Test;\nexports.default = Test;"
+      "source": "'use strict';\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\nexports.default = undefined;\n\nvar _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if (\"value\" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();\n\nvar _react = require('react');\n\nvar _react2 = _interopRequireDefault(_react);\n\nvar _common = require('../../../css/common.css');\n\nvar _common2 = _interopRequireDefault(_common);\n\nvar _reactSlick = require('react-slick');\n\nvar _reactSlick2 = _interopRequireDefault(_reactSlick);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\"Cannot call a class as a function\"); } }\n\nfunction _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError(\"this hasn't been initialised - super() hasn't been called\"); } return call && (typeof call === \"object\" || typeof call === \"function\") ? call : self; }\n\nfunction _inherits(subClass, superClass) { if (typeof superClass !== \"function\" && superClass !== null) { throw new TypeError(\"Super expression must either be null or a function, not \" + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }\n\nvar Test = function (_Component) {\n  _inherits(Test, _Component);\n\n  function Test() {\n    _classCallCheck(this, Test);\n\n    return _possibleConstructorReturn(this, Object.getPrototypeOf(Test).apply(this, arguments));\n  }\n\n  _createClass(Test, [{\n    key: 'render',\n    value: function render() {\n      console.log('======-=-=-');\n      return _react2.default.createElement(\n        'div',\n        null,\n        _react2.default.createElement(\n          'div',\n          null,\n          '假的input'\n        ),\n        _react2.default.createElement(\n          'div',\n          null,\n          _react2.default.createElement('input', { type: 'text', value: '真的input' })\n        )\n      );\n    }\n  }]);\n\n  return Test;\n}(_react.Component);\n\nexports.default = Test;"
     },
     {
       "id": 720,
@@ -37429,7 +37438,7 @@
         0
       ],
       "assets": [],
-      "issuer": "/Users/jiangnan/github/geekjiang/node_modules/react-json-tree/node_modules/core-js/library/fn/object/keys.js",
+      "issuer": "/Users/jiangnan/github/geekjiang/node_modules/react-json-tree/node_modules/core-js/library/fn/object/get-prototype-of.js",
       "failed": false,
       "errors": 0,
       "warnings": 0,
@@ -39027,7 +39036,7 @@
         0
       ],
       "assets": [],
-      "issuer": "/Users/jiangnan/github/geekjiang/node_modules/react-json-tree/node_modules/core-js/library/modules/_object-create.js",
+      "issuer": "/Users/jiangnan/github/geekjiang/node_modules/react-json-tree/node_modules/core-js/library/modules/_object-keys.js",
       "failed": false,
       "errors": 0,
       "warnings": 0,
@@ -39363,7 +39372,7 @@
         0
       ],
       "assets": [],
-      "issuer": "/Users/jiangnan/github/geekjiang/node_modules/react-json-tree/lib/obj-type.js",
+      "issuer": "/Users/jiangnan/github/geekjiang/node_modules/react-json-tree/node_modules/babel-runtime/helpers/possibleConstructorReturn.js",
       "failed": false,
       "errors": 0,
       "warnings": 0,
@@ -43878,7 +43887,7 @@
         0
       ],
       "assets": [],
-      "issuer": "/Users/jiangnan/github/geekjiang/node_modules/core-js/library/modules/$.to-iobject.js",
+      "issuer": "/Users/jiangnan/github/geekjiang/node_modules/core-js/library/modules/$.object-assign.js",
       "failed": false,
       "errors": 0,
       "warnings": 0,
@@ -44051,7 +44060,7 @@
         0
       ],
       "assets": [],
-      "issuer": "/Users/jiangnan/github/geekjiang/node_modules/core-js/library/modules/es6.object.set-prototype-of.js",
+      "issuer": "/Users/jiangnan/github/geekjiang/node_modules/core-js/library/modules/es6.object.assign.js",
       "failed": false,
       "errors": 0,
       "warnings": 0,
@@ -46336,7 +46345,7 @@
       "name": "./src/js/client/store/configureStore.js",
       "index": 977,
       "index2": 1019,
-      "size": 1380,
+      "size": 1495,
       "cacheable": true,
       "built": true,
       "optional": false,
@@ -46360,7 +46369,7 @@
           "loc": "13:22-55"
         }
       ],
-      "source": "'use strict';\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\nexports.default = configureStore;\n\nvar _redux = require('redux');\n\nvar _reduxThunk = require('redux-thunk');\n\nvar _reduxThunk2 = _interopRequireDefault(_reduxThunk);\n\nvar _reducers = require('../reducers');\n\nvar _reducers2 = _interopRequireDefault(_reducers);\n\nvar _reduxDevtools = require('redux-devtools');\n\nvar _DevTools = require('../containers/DevTools');\n\nvar _DevTools2 = _interopRequireDefault(_DevTools);\n\nvar _reduxRouter = require('redux-router');\n\nvar _createBrowserHistory = require('history/lib/createBrowserHistory');\n\nvar _createBrowserHistory2 = _interopRequireDefault(_createBrowserHistory);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nvar enhancer = (0, _redux.compose)((0, _reduxRouter.reduxReactRouter)({ createHistory: _createBrowserHistory2.default }), (0, _redux.applyMiddleware)(_reduxThunk2.default), _DevTools2.default.instrument(), (0, _reduxDevtools.persistState)(window.location.href.match(/[?&]debug_session=([^&]+)\\b/)));\n\nfunction configureStore(initialState) {\n  var store = (0, _redux.createStore)(_reducers2.default, initialState, enhancer);\n\n  if (module.hot) {\n    module.hot.accept('../reducers', function () {\n      return store.replaceReducer(require('../reducers').default);\n    });\n  }\n  return store;\n}"
+      "source": "'use strict';\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\nexports.default = configureStore;\n\nvar _redux = require('redux');\n\nvar _reduxThunk = require('redux-thunk');\n\nvar _reduxThunk2 = _interopRequireDefault(_reduxThunk);\n\nvar _reducers = require('../reducers');\n\nvar _reducers2 = _interopRequireDefault(_reducers);\n\nvar _reduxDevtools = require('redux-devtools');\n\nvar _DevTools = require('../containers/DevTools');\n\nvar _DevTools2 = _interopRequireDefault(_DevTools);\n\nvar _reduxRouter = require('redux-router');\n\nvar _createBrowserHistory = require('history/lib/createBrowserHistory');\n\nvar _createBrowserHistory2 = _interopRequireDefault(_createBrowserHistory);\n\nvar _routes = require('../../routes');\n\nvar _routes2 = _interopRequireDefault(_routes);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nvar enhancer = (0, _redux.compose)((0, _reduxRouter.reduxReactRouter)({ routes: _routes2.default, createHistory: _createBrowserHistory2.default }), (0, _redux.applyMiddleware)(_reduxThunk2.default), _DevTools2.default.instrument(), (0, _reduxDevtools.persistState)(window.location.href.match(/[?&]debug_session=([^&]+)\\b/)));\n\nfunction configureStore(initialState) {\n  var store = (0, _redux.createStore)(_reducers2.default, initialState, enhancer);\n\n  if (module.hot) {\n    module.hot.accept('../reducers', function () {\n      return store.replaceReducer(require('../reducers').default);\n    });\n  }\n  return store;\n}"
     },
     {
       "id": 978,
@@ -46430,7 +46439,7 @@
           "moduleName": "./src/js/client/store/configureStore.js",
           "type": "module.hot.accept",
           "userRequest": "../reducers",
-          "loc": "38:4-40:6"
+          "loc": "42:4-44:6"
         },
         {
           "moduleId": 977,
@@ -46439,7 +46448,7 @@
           "moduleName": "./src/js/client/store/configureStore.js",
           "type": "cjs require",
           "userRequest": "../reducers",
-          "loc": "39:34-56"
+          "loc": "43:34-56"
         }
       ],
       "source": "'use strict';\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n\nvar _ActionTypes = require('../constants/ActionTypes');\n\nvar ActionTypes = _interopRequireWildcard(_ActionTypes);\n\nvar _merge = require('lodash/merge');\n\nvar _merge2 = _interopRequireDefault(_merge);\n\nvar _paginate = require('./paginate');\n\nvar _paginate2 = _interopRequireDefault(_paginate);\n\nvar _reduxRouter = require('redux-router');\n\nvar _redux = require('redux');\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nfunction _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }\n\n// Updates an entity cache in response to any action with response.entities.\nfunction entities() {\n  var state = arguments.length <= 0 || arguments[0] === undefined ? { users: {}, repos: {} } : arguments[0];\n  var action = arguments[1];\n\n  if (action.response && action.response.entities) {\n    return (0, _merge2.default)({}, state, action.response.entities);\n  }\n\n  return state;\n}\n\n// Updates error message to notify about the failed fetches.\nfunction errorMessage() {\n  var state = arguments.length <= 0 || arguments[0] === undefined ? null : arguments[0];\n  var action = arguments[1];\n  var type = action.type;\n  var error = action.error;\n\n\n  if (type === ActionTypes.RESET_ERROR_MESSAGE) {\n    return null;\n  } else if (error) {\n    return action.error;\n  }\n\n  return state;\n}\n\n// Updates the pagination data for different actions.\nvar pagination = (0, _redux.combineReducers)({\n  starredByUser: (0, _paginate2.default)({\n    mapActionToKey: function mapActionToKey(action) {\n      return action.login;\n    },\n    types: [ActionTypes.STARRED_REQUEST, ActionTypes.STARRED_SUCCESS, ActionTypes.STARRED_FAILURE]\n  }),\n  stargazersByRepo: (0, _paginate2.default)({\n    mapActionToKey: function mapActionToKey(action) {\n      return action.fullName;\n    },\n    types: [ActionTypes.STARGAZERS_REQUEST, ActionTypes.STARGAZERS_SUCCESS, ActionTypes.STARGAZERS_FAILURE]\n  })\n});\n\nvar rootReducer = (0, _redux.combineReducers)({\n  entities: entities,\n  pagination: pagination,\n  errorMessage: errorMessage,\n  router: _reduxRouter.routerStateReducer\n});\n\nexports.default = rootReducer;"

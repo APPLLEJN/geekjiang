@@ -13,5 +13,3 @@ export default class Test extends Component{
     );
   }
 }
-
-export default Test;

@@ -8,7 +8,6 @@ import Test from './client/components/Test'
 
 export default (
   <Route path="/"  component={Containers}>
-    <Route path="/App" component={App}/>
-  	<Route path="/Test" component={Test}/>
+  	<Route path="/test" component={Test}/>
   </Route>
 )
