@@ -17,7 +17,7 @@ import reducer from '../client/reducers';
 import routes from '../routes';
 import {ReduxRouter} from 'redux-router';
 import {reduxReactRouter, match} from 'redux-router/server'; // 'redux-router/server';
-
+import request from 'superagent'
 var app = Express()
 var port = 3000
 var webpackPort = 3001
@@ -29,19 +29,24 @@ var webpackPort = 3001
 //    console.log(docs)
 // })
 // 没有挂载路径的中间件，应用的每个请求都会执行该中间件
-app.get('/login', function(req, res) {
-  // TO DO
-})
 
 var express = require('express');
 var app = express();
+app.get('/login', function(req, res) {
+  // TO DO
+  request
+  .get('http://localhost:3050/login')
+  .end(function(err, res){
+    console.log(`this is err ${err}`)
+  })
+})
 //设置跨域访问
 app.all('*', function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
   next();
 });
 app.use(express.static(path.resolve('src')))
-const picture = require('../../images/bg.jpg')
+
 const getMarkup = (store) => {
   const initialState = serialize(store.getState());
   const markup = renderToString(
@@ -52,13 +57,13 @@ const getMarkup = (store) => {
   return `<!doctype html>
     <html>
       <head>
-        <title>Redux React Router – Server rendering Example</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+        <title>geekjiang</title>
         <link rel="stylesheet" type="text/css" href="http://localhost:3001/style.css" />
         <link rel="stylesheet" type="text/css" href="http://localhost:3000/css/slick.css" />
       </head>
       <body>
         <div id="root">${markup}</div>
-        <img src={picture}/>
         <script>window.__initialState = ${initialState};</script>
         <script src="http://localhost:3001/bundle.js"></script>
       </body>
