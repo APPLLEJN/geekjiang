@@ -21,6 +21,11 @@ import request from 'superagent'
 var app = Express()
 var port = 3000
 var webpackPort = 3001
+
+// connect db
+var mongoose = require('mongoose');
+
+mongoose.connect('mongodb://localhost/geekjiang');
 //var compiler = webpack(config)
 
 // var db = require('monk')('localhost:27017/geekjiang')
@@ -35,7 +40,7 @@ var app = express();
 app.get('/login', function(req, res) {
   // TO DO
   request
-  .get('http://localhost:3050/login')
+  .get('http://localhost:3050')
   .end(function(err, res){
     console.log(`this is err ${err}`)
   })

@@ -3,6 +3,9 @@ import style from '../../../css/common.css'
 import {Header, Slider} from '../components'
 
 export default class Containers extends Component {
+  static propTypes = {
+    children: PropTypes.node
+  }
 
   render() {
     //const { increment, incrementIfOdd, incrementAsync, decrement, counter } = this.props
@@ -12,6 +15,7 @@ export default class Containers extends Component {
         <div className={style.wrapper}>
           <Header/>
           <Slider/>
+          {this.props.children}
         </div>
       </div>
     )
