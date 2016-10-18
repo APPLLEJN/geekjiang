@@ -11,3 +11,10 @@ export const STARGAZERS_REQUEST = 'STARGAZERS_REQUEST'
 export const STARGAZERS_SUCCESS = 'STARGAZERS_SUCCESS'
 export const STARGAZERS_FAILURE = 'STARGAZERS_FAILURE'
 export const RESET_ERROR_MESSAGE = 'RESET_ERROR_MESSAGE'
+
+
+import keyMirror from 'keymirror'
+
+export const HOME = keyMirror({
+
+})

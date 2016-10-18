@@ -1,5 +1,5 @@
+export { default as App } from '../containers/App'
 export { default as Header } from './Header'
 export { default as Counter } from './Counter'
-export { default as Containers } from '../containers/Containers'
 export { default as Slider } from './Slider'
-export { default as Test } from './Test'
+export { default as Home } from './Home'

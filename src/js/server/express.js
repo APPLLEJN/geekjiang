@@ -18,14 +18,20 @@ import routes from '../routes';
 import {ReduxRouter} from 'redux-router';
 import {reduxReactRouter, match} from 'redux-router/server'; // 'redux-router/server';
 import request from 'superagent'
+import fillStore from '../client/lib/fillStore'
+
 var app = Express()
 var port = 3000
 var webpackPort = 3001
 
 // connect db
-var mongoose = require('mongoose');
+// try {
+//   var mongoose = require('mongoose');
+//   mongoose.connect('mongodb://localhost/geekjiang');
+// } catch (e) {
+//   throw Error(e)
+// }
 
-mongoose.connect('mongodb://localhost/geekjiang');
 //var compiler = webpack(config)
 
 // var db = require('monk')('localhost:27017/geekjiang')
@@ -37,14 +43,7 @@ mongoose.connect('mongodb://localhost/geekjiang');
 
 var express = require('express');
 var app = express();
-app.get('/login', function(req, res) {
-  // TO DO
-  request
-  .get('http://localhost:3050')
-  .end(function(err, res){
-    console.log(`this is err ${err}`)
-  })
-})
+
 //设置跨域访问
 app.all('*', function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
@@ -95,7 +94,7 @@ app.use((req, res) => {
   const query = qs.stringify(req.query);
   const url = req.path + (query.length ? '?' + query : '');
 
-  store.dispatch(match(url, (error, redirectLocation, routerState) => {
+  store.dispatch(match(url, async (error, redirectLocation, routerState) => {
     if (error) {
       console.error('Router error:', error);
       res.status(500).send(error.message);
@@ -104,6 +103,7 @@ app.use((req, res) => {
     } else if (!routerState) {
       res.status(400).send('Not Found');
     } else {
+      await fillStore(store, routerState, routerState.components)
       res.status(200).send(getMarkup(store));
     }
   }));

@@ -10,7 +10,7 @@ var Webpack_isomorphic_tools_plugin = require('webpack-isomorphic-tools/plugin')
 var webpack_isomorphic_tools_plugin = new Webpack_isomorphic_tools_plugin(require('./webpack-isomorphic-tools-configuration'))
 
 var webpackConfig = {
-  devtool: 'inline-source-map',
+  devtool: 'eval',
   entry: {
     'index': ['./src/js/client/index.js',
               'webpack/hot/dev-server',
@@ -24,6 +24,11 @@ var webpackConfig = {
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
+    new webpack.optimize.UglifyJsPlugin({
+      compress: {
+          warnings: false
+      }
+    }),
     new ExtractTextPlugin('style.css', {allChunks: true }),
     new webpack.DefinePlugin({
       __CLIENT__: true,

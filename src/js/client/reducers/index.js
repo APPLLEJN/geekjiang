@@ -1,6 +1,5 @@
 import * as ActionTypes from '../constants/ActionTypes'
-import merge from 'lodash/merge'
-import paginate from './paginate'
+import home from './home'
 import { routerStateReducer } from 'redux-router'
 import { combineReducers } from 'redux'
 
@@ -26,29 +25,9 @@ function errorMessage(state = null, action) {
   return state
 }
 
-// Updates the pagination data for different actions.
-const pagination = combineReducers({
-  starredByUser: paginate({
-    mapActionToKey: action => action.login,
-    types: [
-      ActionTypes.STARRED_REQUEST,
-      ActionTypes.STARRED_SUCCESS,
-      ActionTypes.STARRED_FAILURE
-    ]
-  }),
-  stargazersByRepo: paginate({
-    mapActionToKey: action => action.fullName,
-    types: [
-      ActionTypes.STARGAZERS_REQUEST,
-      ActionTypes.STARGAZERS_SUCCESS,
-      ActionTypes.STARGAZERS_FAILURE
-    ]
-  })
-})
-
 const rootReducer = combineReducers({
   entities,
-  pagination,
+  home,
   errorMessage,
   router: routerStateReducer
 })
